@@ -1,0 +1,92 @@
+*********VARIAVEIS*****
+
+* O PHP define automatico o tipo de variavel, nao sendo necessario informar se é uma variavel, mas podemos definir se for o caso.
+- Real      1,5  2,9  3,9
+- Inteira   1    2    3
+- Caracter  ABCDE
+
+
+
+
+
+$ - COMANDO PARA RECEBER A VARIAVEL
+echo - COMANDO PARA PRINTAR NA TELA
+<br> - Mesma fnução do HTML, quebra a linha para baixo, utiliza junto com echo, caso queira printar na tela mais de uma linha
+=    - Comando para receber a variavel 
+GET  - significa "pegar" exemplo:
+                                 $n1 = $_GET["a"]; ("a" nao é variavel é o parametro a ser informado. 
+
+<?php
+$idade = 48;  (Idade recebe 48)
+$nome = "Emerson";
+
+echo "$nome tem $idade anos! ";
+
+?>
+
+
+******OPERADORES ARITIMETICOS********
+
+Adição                           +
+Subtração                        -
+Multiplicação                    * 
+Divisao                          /
+Modulo (resto da divisão)        %
+
+
+
+$n1 = 2;
+$n2 = 3;
+$s = $n1 + $n2;
+
+echo " A soma vale $s";
+
+Exemplo do codigo:
+   <div>
+        <?php
+        $n1 = 2;
+        $n2 = 3;
+        $s = $n1 + $n2;
+        echo " A soma vale $s";
+        /*Pode representar assim tambem:
+        echo "A soma entre $n1 e $n2 é igual a $s";*/
+        
+        ?>
+    </div>
+
+Outro exemplo:
+<div>
+        <?php
+        $n1 = 2;
+        $n2 = 3;
+        
+        echo " A soma vale ". ($n1+$n2);
+        echo "<br>A subtração vale ". ($n1-$n2);
+        echo "<br>A multiplicação vale ". ($n1*$n2);
+        echo "<br>A divisão vale ". ($n1/$n2);
+        echo "<br>O modulo vale ". ($n1%$n2);
+
+        
+          
+        ?>
+    </div>
+
+*Podemos informqar estes valores direto no navegador, por enquanto, ate criar formularios:
+localhost/aula05/operadores.php?a=5&b=8
+
+        $n1 = $_GET["a"];
+        $n2 = $_GET["b"];
+        $m = ($n1 + $n2) /2;
+
+
+******FUNCÕES ARITIMETICAS*******
+
+abs ()    - Valor absoluto
+pow ()    - potenciacao
+sqrt ()   - Raiz quadrada
+round ()  - Arredondamento, no caso do round segue a regra da matematica, tem dois comandos para definir manualmente, ceil - Para cima, floor - Para baixo
+intval () - Pega a parte inteira do numero
+number_format () - Formatação
+
+
+
