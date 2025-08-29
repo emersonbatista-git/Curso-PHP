@@ -154,6 +154,25 @@ cursoemvideo                             cursoPHP
 Neste caso criou a primeira variavel $site e depois criou a segunda como variavel cursoemvideo, como se voce uma secundaria 
 
 
+*******OPERADORES RELACIONAIS*********
+
+Maior                       $a > $b
+Menor                       $a < $b                     
+Maior ou igual              $a >= $b
+Menor ou igual              $a <= $b
+Diferente                   $a <> $b  ou $a != $b
+Igual                       $a == $b
+Identico                    $a === $b - Se o conteudo é igual, incluindo a caracterisca, por exemplo se é string
+Operador Unario             ?   :, Seria expressao?verdsadeiro:falso
+                            Exemplo:
+                             $maior = $a > $b ? verdadeiro:falso - seria a condição senao
+                             $maior = $a>$b?$a:$b
+
+
+
+
+
+
 
 
 
