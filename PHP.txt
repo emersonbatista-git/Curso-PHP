@@ -163,10 +163,38 @@ Menor ou igual              $a <= $b
 Diferente                   $a <> $b  ou $a != $b
 Igual                       $a == $b
 Identico                    $a === $b - Se o conteudo é igual, incluindo a caracterisca, por exemplo se é string
-Operador Unario             ?   :, Seria expressao?verdsadeiro:falso
+Operador Unario ?   :;      Seria expressao?verdadeiro:falso
                             Exemplo:
                              $maior = $a > $b ? verdadeiro:falso - seria a condição senao
-                             $maior = $a>$b?$a:$b
+                       
+$maior = $a>$b ? $a : $b;   Neste caso se a for maior que b, entao $maior recebe $a, senao $maior recebe $b
+
+$sit = $m <7 ? "recuperação" : "aprovado"   Neste caso de $m for menor que 7, $sit recebe recuperacao, senao $sit recebe aprovado 
+
+
+
+******Operadores logicos********
+
+and ou &&       V V = V, V F = F, F V = F, F F = F     As duas tem que atender os requisitos
+
+or ou ||        V V = V, V F = V, F V = V, F F = F     Uma ou a outra tem que atender os requisitos
+
+xor             V V = V, V F = V, F V = V, F F = F     Ou exclusivo, ele pode ser uma coisa ou a outra, mas nunca as duas, neste caso se for as duas iguais sempre será                                                        Falso, mesmo que seja as duas verdadeiro.
+!               V é falso e F é verdaderiro            Neste caso seria o perador NAO, uma coisa que é nao verdsadeiro é falso, e o que é nao falso é verdadeiro.           
+
+                
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
