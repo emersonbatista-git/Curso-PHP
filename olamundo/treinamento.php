@@ -10,8 +10,8 @@
 
 <?php 
 
-$a = 14;
-$b = 2;
+$a = $_GET ["a"];
+$b = $_GET ["b"];
 
 
 echo"A soma de $a e $b é " . ($r = $a + $b); 
