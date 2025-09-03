@@ -163,7 +163,7 @@ Menor ou igual              $a <= $b
 Diferente                   $a <> $b  ou $a != $b
 Igual                       $a == $b
 Identico                    $a === $b - Se o conteudo é igual, incluindo a caracterisca, por exemplo se é string
-Operador Unario ?   :;      Seria expressao?verdadeiro:falso
+Operador ternario ?   :;      Seria expressao?verdadeiro:falso
                             Exemplo:
                              $maior = $a > $b ? verdadeiro:falso - seria a condição senao
                        
@@ -180,7 +180,94 @@ and ou &&       V V = V, V F = F, F V = F, F F = F     As duas tem que atender o
 or ou ||        V V = V, V F = V, F V = V, F F = F     Uma ou a outra tem que atender os requisitos
 
 xor             V V = V, V F = V, F V = V, F F = F     Ou exclusivo, ele pode ser uma coisa ou a outra, mas nunca as duas, neste caso se for as duas iguais sempre será                                                        Falso, mesmo que seja as duas verdadeiro.
-!               V é falso e F é verdaderiro            Neste caso seria o perador NAO, uma coisa que é nao verdsadeiro é falso, e o que é nao falso é verdadeiro.           
+!               V é falso e F é verdaderiro            Neste caso seria o perador NAO, uma coisa que é nao verdsadeiro é falso, e o que é nao falso é verdadeiro.    
+
+
+********OPERADORES CONDICIONAIS**********
+
+SENAO - Ternario
+
+Neste exemplo se $tipo for maior ou igual a 18, mostre obrigatorio senao moste nao obigatorio, os operadores sao os simbolos ? e :
+
+$tipo = ($idade >= 18 && $idade<65) ? "OBRIGATORIO":"NAO OBRIGATORIO";
+
+
+Outra opção de senão e mais utilizado seria:
+
+if - se
+else - senao
+
+
+Exemplos:
+
+Neste exemplo pode utilizar desta forma ou com o Ternario $maior = $a>$b ? $a:$b
+
+if($a>$b)
+{$maior = $a;}
+
+else
+{$maior = $b;}
+
+Neste nao teria como aplicar o ternario. Ternario só aceita uma variavel:
+
+if($idade>=18) {
+$vota = true;
+$direge = true;
+}
+
+else {
+ $vota = false;
+ $dirige = false;
+}
+
+Podemos ter estrutura composta e simplificar, neste exemplo temos um if dentro de um else, ficar atento aos {}:
+
+    
+        if ($idade<16) {
+            $vota = 'não pode votar';
+        }
+
+    else {
+
+        if (($idade >= 16 && $idade < 18) || ($idade > 65 )) {
+            $vota = 'tem o voto opcional';
+    }
+        else {
+         $vota = 'voto obrigatorio';
+        
+        }
+    
+    }
+
+Tem a opção de simplicar com o comando elseif, eliminaria um {}:
+
+        if ($idade<16) {
+            $vota = 'não pode votar';
+        }
+
+    elseif (($idade >= 16 && $idade < 18) || ($idade > 65 )) {
+            $vota = 'tem o voto opcional';
+             }
+        else {
+         $vota = 'voto obrigatorio';
+        
+        }
+
+Obs.: N alinha do elseif ou do if tem uma consição envolvendo 3 situações, a || que dizer ou, entao temos duas consiçoes antes e uma depois.
+    
+ 
+
+
+
+
+
+
+
+
+
+
+
+      
 
                 
 
