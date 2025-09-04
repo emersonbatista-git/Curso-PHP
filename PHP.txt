@@ -254,7 +254,24 @@ Tem a opção de simplicar com o comando elseif, eliminaria um {}:
         }
 
 Obs.: N alinha do elseif ou do if tem uma consição envolvendo 3 situações, a || que dizer ou, entao temos duas consiçoes antes e uma depois.
-    
+
+
+ 
+******OPCAO ESCOLHA*******
+
+Escolha (op)                                     PHP
+                                             switch ($op) {
+caso 1                                         case 1:
+ Escreva ("A")                                  echo "A";
+Caso 2                                            break;
+ Escreva ("B")                                 case 2:
+Caso 3                                          echo "B";
+ Escreva ("Erro")                                 break;
+                                               default:
+FimEscolha                                      echo "Erro";   
+                                              }
+
+O break sempre será informado exceto na ultima opção, ele faz que ao ser selecionado já saia do laço.
  
 
 

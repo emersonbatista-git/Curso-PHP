@@ -38,7 +38,7 @@
 
         
 
-        echo "A média entre " . number_format($n1,1);;
+        echo "A média entre " . number_format ( $n1,1);;
         echo " e "  . number_format($n2,1);;
         echo " é igual a " . number_format($m,1);;
         echo "<br/>Situação do aluno: $sit";
