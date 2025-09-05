@@ -272,6 +272,18 @@ FimEscolha                                      echo "Erro";
                                               }
 
 O break sempre será informado exceto na ultima opção, ele faz que ao ser selecionado já saia do laço.
+
+
+
+******OPÇÃO ENQUANTO*******
+
+c <- 1                                     $c = 1;
+                                           while ($c <= 10) {
+enquanto (c<=10) faca                          echo $c;             
+  Escreva (c)                              $c++; (pode ser escrito tamnbem $c = $c + 1; ou $c += 1;                    
+ c <- c + 1                                }                    
+Fimenquanto                                              
+
  
 
 
