@@ -1,0 +1,53 @@
+- Banco de dados contem tabelas
+- Tabelas contem registros
+- Registros contem campos 
+
+* Criar banco de dados:
+
+create database cadastro
+default character set utf8mb4
+default collate utf8mb4_general_ci;
+
+* Deletar banco de dados:
+
+drop database cadastro;
+
+*Criar tabelas  e os campos:
+Definir uma chave primaria para que nao tenha registros duplicados. Foi criado o ID com auto incremento, o banco irá seguir a seuquencia
+
+create table pessoas (
+id int not null auto_increment,
+nome varchar(30) NOT NULL,
+nascimento DATE,
+sexo enum ('M' , 'F'),
+peso decimal (5,2),
+altura decimal (3,2),
+nascionalidade varchar(20)
+ default 'Brasil',
+ primary key (id) )
+ default charset = utf8mb4;
+
+
+
+Obs, podemos utilizar crase nos nomes dos campos para permitir espaço, acentos, etc...
+
+
+* Descrever uma tabela
+
+describe pessoas;
+
+
+
+create table pessoas (
+id int not null auto_increment,
+nome varchar(30) NOT NULL,
+nascimento DATE,
+sexo enum ('M' , 'F'),
+peso decimal (5,2),
+altura decimal (3,2),
+nascionalidade varchar(20)
+ default 'Brasil',
+ primary key (id) )
+ default charset = utf8mb4;
+
+

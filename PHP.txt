@@ -276,13 +276,30 @@ O break sempre será informado exceto na ultima opção, ele faz que ao ser sele
 
 
 ******OPÇÃO ENQUANTO*******
+Verifica no inicio o teste logico
 
 c <- 1                                     $c = 1;
                                            while ($c <= 10) {
 enquanto (c<=10) faca                          echo $c;             
   Escreva (c)                              $c++; (pode ser escrito tamnbem $c = $c + 1; ou $c += 1;                    
  c <- c + 1                                }                    
-Fimenquanto                                              
+Fimenquanto     
+
+
+*******OPÇÃO REPITA********
+Verifica no final o teste logico
+
+c <- 1                                    $c = 1;
+
+Repita                                    do {
+  Escreva (c)                             echo $c;
+ c <- c + 1                               $c++;  
+                                          }
+Ate (c > 10)                              while ($c <= 10);   
+
+
+
+                                         
 
  
 
