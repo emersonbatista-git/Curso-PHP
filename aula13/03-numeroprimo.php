@@ -27,12 +27,12 @@
         echo "Valores multiplus: " . implode(', ', $mult);
         echo "<br/>Total de multiplos: $cont <br/>";
     
-        if ($cont > 2) {
-            echo "O valor $n nao é primo";
+        if ($cont == 2) {
+            echo "Resultado: $n <span class=cor>É PRIMO!</span";
         }
 
         else {
-            echo "O valor $n é primo";
+            echo "Resultado: $n <span class=cor>NÃO É PRIMO!</span";
         }
 
     
