@@ -1,6 +1,8 @@
 - Banco de dados contem tabelas
 - Tabelas contem registros
 - Registros contem campos 
+- Tipos de comandos, DDL (Data Definition Language) CREATE DATABASE,  CREATE TABLE, ALTER TABLE, DROP TABLE
+                     DML (Data Manipulation Language) INSERT INTO
 
 * Criar banco de dados:
 
@@ -49,5 +51,76 @@ nascionalidade varchar(20)
  default 'Brasil',
  primary key (id) )
  default charset = utf8mb4;
+
+
+*Inserir dados nas tabelas
+Nao é necessario informar o ID, uma vez que definimos como auto_increment
+
+insert into pessoas
+(nome, nascimaneto, sexo, peso, altura, nacionalidade)
+values
+('Godofredo', '1984-01-02', 'M', '78.5', '1.83', 'Brasil');
+
+ou
+
+(default,'Maria', '1989-03-02', 'F', '58.5', '1.68', default); o ID como defaut ira seguir  sequencia e a nascionalidade tambem por ter definido Brasil
+
+*Se a ordem for exatamente a mesma que será inserida, nao é necessario informar os campos:
+
+insert into pessoas values
+(default,'Creuza', '1990-03-02', 'F', '58.5', '1.68', default);
+
+* para inserir mais registros, informe ";" somente no final do comando
+
+insert into pessoas values
+(default,'João', '1993-03-02', 'M', '88.5', '1.76', default),
+(default,'Maria', '1996-07-02', 'F', '68.5', '1.65', default),
+(default,'Pedro', '1998-09-02', 'M', '98.5', '1.80', default),
+(default,'Lucas', '1999-08-02', 'M', '78.5', '1.72', default);
+
+
+*Alterar a estrutura da tabela
+- Acrescentar coluna
+
+alter table pessoas
+add column profissao varchar(10);
+
+-Caso queira definir onde será criada
+
+alter table pessoas
+add column profissao varchar(10) after nome;
+
+alter table pessoas
+add column profissao varchar(10) firts;
+
+
+-Remover coluna
+
+alter table pessoas
+drop column profissao;
+
+- Modificar definição
+
+alter table pessoas
+modify column profissao varchar(20);
+
+- Renomear coluna
+
+alter table pessoas
+change column profissao prof varchar(20);
+
+- Renomear a tabela
+
+alter table pessoas rename to gafanhotos;
+
+- Deletar a tabela
+
+drop table if exists alunos;
+
+
+
+
+
+
 
 
