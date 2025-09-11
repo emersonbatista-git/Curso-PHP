@@ -2,7 +2,7 @@
 - Tabelas contem registros
 - Registros contem campos 
 - Tipos de comandos, DDL (Data Definition Language) CREATE DATABASE,  CREATE TABLE, ALTER TABLE, DROP TABLE
-                     DML (Data Manipulation Language) INSERT INTO
+                     DML (Data Manipulation Language) INSERT INTO, UPDATE, DELETE, TRUNCATE
 
 * Criar banco de dados:
 
@@ -116,6 +116,21 @@ alter table pessoas rename to gafanhotos;
 - Deletar a tabela
 
 drop table if exists alunos;
+
+*** Manipulando linhas*****
+
+update cursos set nome = 'HTML5' where idcurso = 1;
+
+update cursos set nome = 'PHP', ano = '2015' where idcurso = 4;
+
+update cursos set nome = 'JAVA', ano = '2015', carga = '40' where idcurso = 5 limit 1;
+
+delete from cursos where idcurso in (9,10);
+
+truncate cursos;  ****Apaga toda a tabela*****
+
+
+
 
 
 
