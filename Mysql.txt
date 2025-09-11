@@ -3,6 +3,7 @@
 - Registros contem campos 
 - Tipos de comandos, DDL (Data Definition Language) CREATE DATABASE,  CREATE TABLE, ALTER TABLE, DROP TABLE
                      DML (Data Manipulation Language) INSERT INTO, UPDATE, DELETE, TRUNCATE
+                     DQL (Data Query Language) SELECT
 
 * Criar banco de dados:
 
@@ -128,6 +129,40 @@ update cursos set nome = 'JAVA', ano = '2015', carga = '40' where idcurso = 5 li
 delete from cursos where idcurso in (9,10);
 
 truncate cursos;  ****Apaga toda a tabela*****
+
+
+****COMANDO SELECT******
+
+select *from cursos;   (seleciona todos os registros da tabela por ordem da chave primaria)
+
+select *from cursos order by nome; (organizou pela coluna nome e ficou em oprdem alfabetica)
+
+select *from cursos order by nome desc; (organizou de forma decrecente)
+
+select ano, carga, nome from cursos order by ano; (pode selecionar apenas algumas colunas e na ordem que quer trazer)
+
+select ano, carga, nome from cursos order by ano, nome; (pode ordenar por mais de uma situação)
+
+select * from cursos where ano = '2016' order by nome; (filtrar por linhas)
+
+select nome, carga from cursos where ano = '2016' order by nome; (selecionou apenas algumas colunas)
+
+select nome, descricao from cursos where ano <= '2015' order by nome; (selecionou menor ouo igual ao ano)
+
+select nome, ano from cursos where ano between '2014' and '2016' order by ano desc, nome asc; (betwenn entre alguma variavel, e com ordenação diferente, uam decendente e ou ascendente)
+
+select nome, ano from cursos where ano in ('2014', '2016'); (selecionar apenbas alguns valores)
+
+select *from cursos where carga > 35 and totaulas < 30; ( atender as duas condiçoes)
+
+select *from cursos where carga > 35 or totaulas < 30;  (atender uma ou outra condição)
+
+
+
+
+
+
+
 
 
 
