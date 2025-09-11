@@ -335,6 +335,59 @@ $res = soma(3,4,8,1,2);                                  function soma() {
                                                              return $s;
                                                          }
 
+*Função Parte II
+
+-Passagem por valor
+
+Procedimento Teste (x: inteiro)                           function teste ($x) {
+   x <- x + 2                                                $x = $x + 2;  ou $x +=2
+   Escreva(x)                                                 echo $x;
+Fimprocedimento                                             }
+
+
+a <- 3                                                        $a = 3;
+Teste (a)                                                     teste ($a);
+Escreva(a) (Mostraria 3 e nao 5)                               echo $a; (Mostraria 3 e nao 5) 
+
+Obs: Passagem por valor, se eu alterar o valor no procedimento (x), o valor da variavel na funcao nao altera (a), por nao retornar o valor.
+
+
+- Passagem por referencia
+
+Procedimento Teste (var x: inteiro)                           function teste (&$x) {
+   x <- x + 2                                                $x = $x + 2;  ou $x +=2
+   Escreva(x)                                                 echo $x;
+Fimprocedimento                                             }
+
+
+a <- 3                                                        $a = 3;
+Teste (a)                                                     teste ($a);
+
+Escreva(a) /*Mostraria 5)*/                               echo $a; /*Mostraria 5*/  
+
+
+****Rotinas externas*******
+
+* Duas funcoes include e require. A diferença é que o include caso nao localize o arquivo ele continua executando o programa, o require para o programa.
+
+<?php
+        include "02-funcoes.php";
+          echo "<h1>Testando novas funções</h1>";
+          ola();
+          mostraValor(4);
+
+          echo "<h2>Finalizando Programa...</h2>";
+
+ 
+        ?>
+
+Tem variações como include-once e require-once.
+A diferença é que nesta opção, se já estiver carregado a função, nao irá carregar novamente, nao deixa repetir a função no mesmo local.
+
+
+
+
+
  
 
 
