@@ -384,6 +384,127 @@ Escreva(a) /*Mostraria 5)*/                               echo $a; /*Mostraria 5
 Tem variações como include-once e require-once.
 A diferença é que nesta opção, se já estiver carregado a função, nao irá carregar novamente, nao deixa repetir a função no mesmo local.
 
+******Manipular String*******
+
+O PHP considera string tudo que está entre aspas.
+Existem diversas funções para facilitar, iremos ver 25 por enquanto.
+
+
+1 - printf
+
+Imprimir já formatado, um dos exemplo eu nao preicisaria de formatar o numero no codigo, formato na impressão.
+
+%s - Mostrar uma string
+%f - float, numero real
+%d - Valor decimal (positivo ou negativo)
+%u - Valor decimal sem sinal (apenas positivo)
+
+printf("O %s R$ %.2f", $p, $pr);
+
+
+2 - print_r
+
+Mostra detalhes de uma variavel, principalmente se for um vetor
+
+$v2 = array (3,7,6,2,1,9);
+        print_r($v2)
+
+Podemos substituir o print_r por duas funções, var_dump($v2); e var_export($v2);
+
+3 - Função wordwrap
+
+Cria quebra de linhas dentro do codigo.
+Neste exemplo o 20 é o numero de caracter que irá quebrar no codigo, colocando o "<br/>" irá quebrar tambem visualmente e com "<br/>\n" irá quebrar em ambos.
+Inserindo false no final, irá quebrar de acordo com os caracteres mesmo que quebre a palavra, se colocar true irá quebrar com os caracteres mas nao permitirar quebra palavras ao meio, ficando maior as linhas se necessario.
+
+$t = "Aqui temos um texto gigante criado pelo PHP e vai ostrar o funcionamento da função wordwrap";
+$r = wordwrap($t, 20, "<br/>\n", false);
+echo $r;
+
+4 - Função strlen
+
+Mostra a quantidade de caracter do string
+
+$txt = "Curso em Video";
+$tamanho = strlen($txt);
+echo $tamanho;
+
+5 - Função trim
+
+Elimina os espaçoes antes e depois do texto, preservando os espaçoes do meio.
+
+$txt = "   Curso em Video   ";
+$tamanho = strlen($txt);
+$novo = trim($txt);
+echo $novo;
+echo (strlen($novo));
+
+6 - Função ltrim
+
+Elimina os espaços apenas do inicio
+
+$txt = "   Curso em Video   ";
+$tamanho = strlen($txt);
+$novo = ltrim($txt);
+echo $novo;
+echo (strlen($novo));
+
+7 - Função rtrim
+
+Elimina os espaços apenas do final
+
+$txt = "   Curso em Video   ";
+$tamanho = strlen($txt);
+$novo = rtrim($txt);
+echo $novo;
+echo (strlen($novo));
+
+
+8 - Função str_word_count
+
+Mostra a quantidade de palavras que contem na string, tem 3 opçoes de exibição:
+
+echo "Com opção 0<br/>";
+$frase = "Eu vou estudar PHP";
+$cont = str_word_count($frase, 0);
+echo $cont;
+
+echo "Com opção 1<br/>";
+$frase1 = "Eu vou estudar PHP";
+$cont = str_word_count($frase1, 1);
+print_r($cont);
+
+echo "Com opção 2<br/>";
+$frase2 = "Eu vou estudar PHP";
+$cont = str_word_count($frase2, 2);
+print_r($cont);
+
+9 - Função explore
+
+Basicamente mostra o vetor, pode definir o limitador,  por exemplo, com isso ao localizar espaço ele coloca cada palavra em um vetor
+
+$site = "Curso em video";
+$vetor = explode(" ",$site);
+print_r($vetor);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
