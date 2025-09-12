@@ -487,6 +487,45 @@ $site = "Curso em video";
 $vetor = explode(" ",$site);
 print_r($vetor);
 
+10 - Função str_split
+
+neste caso ele irá pegar cada letra e colocar em um vetor
+
+<?php
+$nome = "Emerson";
+$vetor = str_split($nome);
+print_r($vetor);
+
+11 - Função implode
+
+Neste caso irá juntar os vetores, pode utilizar tambem o join. Neste caso para exibir utilizar o print, agora nao é mais um vetor
+
+$vetor[0] = "Curso";
+$vetor[1] = "em";
+$vetor[2] = "Video";
+
+$texto = implode(" ", $vetor);
+print($texto);
+
+
+12 - Função chr
+Exibe o codigo em que a letra está
+$letra = chr(67);
+echo"A letra de codigo 67 é $letra";
+
+13 - Função ord
+Exibe o codigo referente a letra
+
+$letra = "C";
+$cod = ord($letra);
+print"A letra $letra tem o codigo $cod";
+
+
+
+
+
+
+
 
 
 
