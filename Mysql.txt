@@ -157,6 +157,32 @@ select *from cursos where carga > 35 and totaulas < 30; ( atender as duas condi�
 
 select *from cursos where carga > 35 or totaulas < 30;  (atender uma ou outra condição)
 
+select * from cursos where nome like 'P%'; (irá trazer todos os registros que comecem com p, se colocar %p termina com p e %p% traz se houver p na palavra)
+
+select * from cursos where nome not like '%P%'; (irá trazer todos os registros que nao tem letra p no nome)
+
+select * from cursos where nome like 'ph%p'; (irá trazer o que comece com ph e termine com p)
+
+select * from cursos where nome like 'ph%p_'; (irá trazer o que comece com ph, tenha alguma coisa no meio,  termine com p e seguido de alguma coisa)
+
+select * from cursos where nome like 'p__t%'; (irá trazer o que começa copm p, tem duas letra e em seguida a letra t)
+
+select distinct nacionalidade from gafanhotos; (neste exemplo irá trazer os paises sem repetir, se houver 3 iguais, irá trazer o nome apenas uma vez)
+
+select count(*) from cursos;  // select count(*) from cursos where carga > 40;(Neste caso irá contar quantos registros tem na tabela, posso colocar o nome da coluna no lugar do asteristico)
+
+select max(carga) from cursos; ( irá selecionar o maior valor na coluna)
+
+select nome, min(carga) from cursos; ( irá selecionar o menor valor na coluna e trazer o nome do curso)
+
+select sum(totaulas) from cursos; (soma todos os valores)
+
+select avg(totaulas) from cursos; (soma todos os valores e tira uma media)
+
+
+
+
+
 
 
 

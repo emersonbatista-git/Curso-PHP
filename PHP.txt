@@ -520,6 +520,145 @@ $letra = "C";
 $cod = ord($letra);
 print"A letra $letra tem o codigo $cod";
 
+14 - Funcao strtolower
+Escreve tudo em minusculo
+
+<?php
+       $nome = "Emerson Santos";
+       print("Seu nome é" . strtolower($nome));
+
+
+15 - Função strtoupper 
+
+Escreve tudo em maiusculo
+
+
+       $nome = "Emerson Santos";
+       print("Seu nome é" . strtoupper($nome));
+
+16 - Função ucfirst
+
+Coloca a primeira letra em maiuscula, se houver outras em maiuscula irá manter
+
+$nome = "emerson santos";
+       print("Seu nome é" . ucfirst($nome));
+
+17 - Função ucwords
+
+Coloca a primeira letra de cada palavra em maiuscula
+
+$nome = "emerson santos";
+       print("Seu nome é" . ucwords($nome));
+
+18 - Função strrev
+
+Escreve ao contrario
+
+$nome = "emerson santos";
+       print("Seu nome é" . strrev($nome));
+
+19 - Função strpos
+
+Mostra a posição que a palavra definida começa, tem que respeitar as letras maiusculas e minusculas
+
+$frase = "Estou aprendendo PHP";
+$pos = strpos($frase, "PHP");
+echo"$frase";
+echo "<br/>A string foi encontrada na posicao $pos" ;
+
+20 - Função stripos
+Ignora a questao de maiusculas e minusculas
+
+$frase = "Estou aprendendo PHP";
+$pos = strpos($frase, "php");
+echo"$frase";
+echo "<br/>A string foi encontrada na posicao $pos" ;
+
+21 - Função substr_count
+Mostra quantas vezes a palavra definida apareceu dentro da frase.
+
+$frase = "Estou aprendendo PHP no curso em video de PHP";
+$cont = substr_count($frase, "PHP");
+print("PHP encontrado $cont vezes");
+
+22 - Função substr
+Mostra a string comoçando na letra 0 e terminando na letra 5, no exemplo abaixo, neste caso irá mostrar apenas a palavra Curso 
+
+
+$site = "Curso em Video";
+$sub = substr($site, 0,5);
+
+echo "$sub ";
+
+Se eu colocar apenas um valor, irá pegar daquele valor em diante
+
+$site = "Curso em Video";
+$sub = substr($site, 7);
+
+echo "$sub ";
+
+
+Se colocar valor negativo, irá pegar as ultimas letras, neste exemplo seria video
+
+$site = "Curso em Video";
+$sub = substr($site, -5);
+
+echo "$sub ";
+
+Se eu colocar dois numeros sendo um negativo irá considerar apenas as duas primeiras letras da ultima palavra, neste exemplo seria Vi
+
+$site = "Curso em Video";
+$sub = substr($site, -5, 2);
+
+echo "$sub ";
+
+23 - Função str_pad
+
+Informa quantos caracteres será utilizado, se informar 30 e a palavra tiver 11, ira completar com espaços ou caracter, no exemplo abaixo será a direita
+
+$nome = "Gustavo";
+$novo = str_pad($nome, 30, "#", STR_PAD_RIGHT);
+print ("Meu professor é $novo Guanabara");
+
+podemos utilizar tambem STR_PAD_BOTH para deixar a palavra no centro e para deixar a esquerda STR_PAD_LEFT
+
+24 - Função str_repeat
+
+Repete a string quantas vezes voce informar
+
+$txt = str_repeat("PHP",5);
+print("O texto gerado foi $txt");
+
+25 - Função str_replace
+
+Pode substituir uma palavra, no exemplo abaixo a palvra original é Matematica, foi substituida por PHP, irá trocar quantas houver na frase.
+
+$frase = "Gosto de estudar Matematica!!!";
+$novafrase = str_replace("Matematica", "PHP", $frase);
+
+print("$novafrase");
+
+Utilizando o i no comando ele ignora maiusculs e minusculas
+$novafrase = str_ireplace("Matematica", "PHP", $frase);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
