@@ -642,6 +642,44 @@ Utilizando o i no comando ele ignora maiusculs e minusculas
 $novafrase = str_ireplace("Matematica", "PHP", $frase);
 
 
+***********VETOR **********
+
+var                                                                        $n[0] = 3;                                        
+n: vetor[0..3] de inteiro                                           $n[1] = 5;
+                                                                             $n[2] = 8;
+inicio                                                                     $n[3] = 2;
+
+n[0] <- 3                                                                ou de forma simplificada                                 
+n[1] <- 5                                                                $n = array(3,5,8,2);
+n[2] <- 8                                                                 $n[] = 7;               Neste caso inseri uma nova variavel depois
+n[3] <- 2                                                                 unset($v[2]);         neste caso estou removendo o vetor 2
+
+
+Podemos utilizar o RANGE tambem para criar vetor , de uma forma um pouco diferente
+
+$c = range(5,20,2);     Um range de 5 ate 20 e pulando de 2 em 2
+
+
+Chaves personalizadas
+
+$v = array (1=> "a", 3=> "b", 6=> "c", 8=>"d"); 
+
+
+*******MATRIZ********
+
+No PHP nao exite matriz mas sim vetores dentro de vetores
+
+$m= array(array(2,3),
+                array(3,4),
+                array(9,5)); 
+
+Podemos alterar os valores 
+$m[0] [1] = $m [2] [0];
+
+                                                  
+
+
+
 
 
 
