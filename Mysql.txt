@@ -179,6 +179,23 @@ select sum(totaulas) from cursos; (soma todos os valores)
 
 select avg(totaulas) from cursos; (soma todos os valores e tira uma media)
 
+select carga from cursos group by carga; (agrupa os valores iguais)
+
+select carga, count(nome) from cursos group by carga; (agrupa e mostra quantos tem em cada resultado)
+
+select ano, count(*) from cursos group by ano having count(ano) >= 5 order by count(*); (Trouxe somente os que tem o contador maior que 5 e ordenou pelo contador)
+
+select ano, count(*) from cursos where totaulas > 30 group by ano having ano > 2013 order by count(*); (Havin funciona no mesmo campo do agrupamento)
+
+select carga, count(*) from cursos where ano > 2015 group by carga having carga > (select avg(carga) from cursos); (Selecionei, agrupei e selecionei dentro do select)
+
+
+
+
+
+
+
+
 
 
 
