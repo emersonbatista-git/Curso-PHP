@@ -9,12 +9,18 @@
    <pre>
        
            <?php
-           $c = range(5,20,2);
-          
-          foreach($c as $v) {
-            echo "$v ";
-          }
+           $n = array (3,5,8,2,6,20);
 
+       
+
+       array_pop($n);
+
+       array_shift($n);
+
+       
+       
+       print_r($n);
+           
            ?>
        
    </pre>

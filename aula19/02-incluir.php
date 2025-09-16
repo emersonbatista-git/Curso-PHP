@@ -6,18 +6,29 @@
     <title>Document</title>
 </head>
 <body>
-    <pre>
+   <pre>
+       
+      
         <?php
        $n = array (3,5,8,2);
-       $n[] = 7;
+
+       $n[] = "7";
+
+       array_push($n,15);
+
+       array_unshift($n,10);
+
+       
+       
        print_r($n);
 
+       
+
+   ?>
+       
+   </pre>
 
 
-?>
-
-</pre>
-    
     
 </body>
 </html>

@@ -645,36 +645,93 @@ $novafrase = str_ireplace("Matematica", "PHP", $frase);
 ***********VETOR **********
 
 var                                                                        $n[0] = 3;                                        
-n: vetor[0..3] de inteiro                                           $n[1] = 5;
-                                                                             $n[2] = 8;
+n: vetor[0..3] de inteiro                                                  $n[1] = 5;
+                                                                           $n[2] = 8;
 inicio                                                                     $n[3] = 2;
 
 n[0] <- 3                                                                ou de forma simplificada                                 
 n[1] <- 5                                                                $n = array(3,5,8,2);
 n[2] <- 8                                                                 $n[] = 7;               Neste caso inseri uma nova variavel depois
 n[3] <- 2                                                                 unset($v[2]);         neste caso estou removendo o vetor 2
+                                                                       
+                                                                        foreach($n as $valor){       /*função para imprimir vetor*/
+                                                                            echo "$valor ";
+                                                                        }    
 
 
-Podemos utilizar o RANGE tambem para criar vetor , de uma forma um pouco diferente
+- Podemos utilizar o RANGE tambem para criar vetor , de uma forma um pouco diferente
 
 $c = range(5,20,2);     Um range de 5 ate 20 e pulando de 2 em 2
 
 
-Chaves personalizadas
+- Chaves personalizadas, neste caso estamos referenciando o valor para cada posição
 
 $v = array (1=> "a", 3=> "b", 6=> "c", 8=>"d"); 
 
 
 *******MATRIZ********
 
-No PHP nao exite matriz mas sim vetores dentro de vetores
+- No PHP nao exite matriz mas sim vetores dentro de vetores
 
 $m= array(array(2,3),
                 array(3,4),
                 array(9,5)); 
 
-Podemos alterar os valores 
+- Podemos alterar os valores 
 $m[0] [1] = $m [2] [0];
+
+
+*******FUNÇOES DOS VETORES******
+
+print_r   - Server para mostrar como está preenchido o vetor, matriz ou coleção de dados, mostra de forma simples, é voltado para o programador, utilize a tag                      <pre></pre> melhora  a visualização
+
+var_dump - Exibe o vetort mais completo, como quantos tem e tipo de variavel.
+
+count    - faz a contagem dos elementos
+
+$v[] = "A"; - Neste comando insere mais um valor no vetor ao final, informe o nome do vetor e colchetes vazio
+
+array_push($n,7);  - Neste comando tambem insere mais um valor no final do vetor
+
+array_pop($n);     - Neste comando exclui o ultimo valor do vetor
+
+array_unshift($n,7); - Insere valor no inicio do vetor
+
+array_shift($n);     - Elimina o valor do inicio do vetor
+
+sort($n);            - Colocar o vetor em ordem; 3, 5, 8, 2 -> 2, 3, 5, 8
+
+rsort($n);           - Coloca o vetor em ordem reversa 3, 5, 8, 2 -> 8, 5, 3, 2
+
+asort($n)            - Ordena de forma associativa, irá ordenar os valores irá manter seus indices, com isso os valores estaram em ordem mas os indices nao.
+                       Array ( [0] => 3 [1] => 5 [2] => 8 [3] => 2 [4] => 6 [5] => 20 ) Array ( [3] => 2 [0] => 3 [1] => 5 [4] => 6 [2] => 8 [5] => 20 )
+
+arsort($n)           - Mesmo conceito, porem em ordem reversa
+
+ksort($n)            - Neste caso, coloca os indices em ordem com seu respectivos valores.
+                      Array ( [2] => 3 [1] => 5 [0] => 8 [3] => 2 [4] => 6 ) Array ( [0] => 8 [1] => 5 [2] => 3 [3] => 2 [4] => 6 )
+
+krsort($n)           - Ordena em forma decrescente os indices
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
                                                   
 

@@ -6,16 +6,22 @@
     <title>Document</title>
 </head>
 <body>
-   <pre>
-       
-           <?php
-           $c = range(5,20,2);
-          
-           print_r($c);
+    <pre>
+        <?php
+       $n = array (3,5,8,2);
 
-           ?>
+       echo "O vetor tem " . count($n) . " elementos  <br/>";
        
-   </pre>
+       print_r($n);
+
+       var_dump($n);
+
+
+
+?>
+
+</pre>
+    
     
 </body>
 </html>
