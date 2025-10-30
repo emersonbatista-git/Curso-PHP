@@ -151,7 +151,7 @@ select nome, descricao from cursos where ano <= '2015' order by nome; (seleciono
 
 select nome, ano from cursos where ano between '2014' and '2016' order by ano desc, nome asc; (betwenn entre alguma variavel, e com ordenação diferente, uam decendente e ou ascendente)
 
-select nome, ano from cursos where ano in ('2014', '2016'); (selecionar apenbas alguns valores)
+select nome, ano from cursos where ano in ('2014', '2016'); (selecionar apenas alguns valores)
 
 select *from cursos where carga > 35 and totaulas < 30; ( atender as duas condiçoes)
 
@@ -188,6 +188,126 @@ select ano, count(*) from cursos group by ano having count(ano) >= 5 order by co
 select ano, count(*) from cursos where totaulas > 30 group by ano having ano > 2013 order by count(*); (Havin funciona no mesmo campo do agrupamento)
 
 select carga, count(*) from cursos where ano > 2015 group by carga having carga > (select avg(carga) from cursos); (Selecionei, agrupei e selecionei dentro do select)
+
+
+*******RELACIONAMENTOS DAS TABELAS********
+
+Chave primaria - Chave que nao pode ser igual, ID
+
+Chave estrageira - É a chave primaria que será gravada em outra tabela para ser a referencia, idcliente grava o id na tabela do endereço, neste caso existe a primaria
+                   id_endereço, relacionou o cliente e seu endereço.
+
+InnoDB e XtraDB  - Suportam a regra ACID, sao as quatro regras de uma boa transação no banco de dados e permite chaves estrageiras
+                   A - Atomicidade, toda tarefa é feita ou nada será executado
+                   C - Concistencia, Se antes da transação o baco estava estavel, após a transação tem que esta. Senao, volte ao estado anterior
+                   I - Isolamento, duas operações simultaneas, uma nao interfere na outra
+                   D - Durabilidade, irá durar o tempo que seja necessario.
+
+Para relacionamentos n (muitos) para 1, coloca a chave primaria do lado 1 na tabela do n, cria no n uma coluna para armazenar a chave primaria do 1. Nao precisa ter o mesmo nome mas tem que ser do mesmo tipo e tamanho
+
+Gafanhoto n -------- 1 curso
+
+id                     idcurso
+idcurso
+
+
+
+describe gafanhotos;
+
+select *from gafanhotos;
+
+alter table gafanhotos add column idcurso int;
+
+alter table gafanhotos add foreign key (idcurso) references cursos(idcurso);
+
+update gafanhotos set idcurso = '6' where id = '1';
+
+
+*** JUNÇOES *****
+
+join ou inner join
+
+* Irá juntar todos que tem relação, os que nao tiverem nao irá apresentar
+
+Neste exemplo irá juntar todos os alunos com todos os curso, irá repetir 1 primeiro com todos os cursos, depois o segundo com todos os curso, etc..
+
+   select gafanhotos.nome, gafanhotos.idcurso, cursos.nome, cursos.ano from gafanhotos join cursos;
+
+Para resolver isso, iremos colocar uma condição relacionando a chave estrangeira
+
+   select gafanhotos.nome, cursos.nome, cursos.ano from gafanhotos join cursos on cursos.idcurso = gafanhotos.idcurso order by gafanhotos.nome;
+
+Podemos colocar apelido na tabela durante o select, com o comando " as "
+
+   select g.nome, c.nome, c.ano from gafanhotos as g join cursos as c on c.idcurso = g.idcurso order by g.nome;
+
+
+outer join
+
+* Irá trazer ate os que nao tem relacionamento, porem temos que definir uma priridade de tabela, localize o comando join e voce terá uma tabela a esquerda e uma a   direita
+
+Se quiser que a da esquerda seja a preferencial:
+
+    select g.nome, c.nome, c.ano from gafanhotos as g left outer join cursos as c on c.idcurso = g.idcurso;
+
+Se quiser preferencia a da direita, podemos colocar right join ou apenas join
+
+    select g.nome, c.nome, c.ano from gafanhotos as g right outer join cursos as c on c.idcurso = g.idcurso;
+
+
+****** RELACIONAMENTO MUITOS PRA MUITOS *******
+
+Quando houver relacionamento muitos para muitos, cria uma nova tabela para fazer o relacionamento
+
+gafanhoto 1     n assite n    1 curso
+
+create table gafanhoto_assite_curso (
+id int not null auto_increment,
+Data date,
+idgafanhoto int,
+idcurso int,
+primary key (id),
+foreign key (idgafanhoto) references gafanhotos(id),
+foreign key (idcurso) references cursos(idcurso)
+
+) default charset = utf8;
+
+
+
+
+select g.id, g.nome, a.idgafanhoto, id_curso from  gafanhotos as g
+join gafanhoto_assite_curso as a
+on g.id = a.idgafanhoto;
+
+select g.nome, id_curso from  gafanhotos as g
+join gafanhoto_assite_curso as a
+on g.id = a.idgafanhoto order by g.nome;
+
+
+select g.nome, c.nome from gafanhotos as g
+join gafanhoto_assite_curso as a
+on g.id = a.idgafanhoto
+join cursos as c
+on c.idcurso = a.id_curso
+ order by g.nome;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
